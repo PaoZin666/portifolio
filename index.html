@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="wrapper"> 
+        <div class="navbar">
+            <a href="#" class="navitem active" onclick="select(this)" data-clr="#89baff">
+                <div class="indicator"></div>
+                <div class="hoverindicator"></div>
+                <ion-icon name="home"></ion-icon>
+            </a>
+            <a href="#" class="navitem" onclick="select(this)" data-clr="#b56aeb">
+                <div class="indicator"></div>
+                <div class="hoverindicator"></div>
+                <ion-icon name="person"></ion-icon>
+            </a>
+            <a href="#" class="navitem" onclick="select(this)" data-clr="#fe9700">
+                <div class="indicator"></div>
+                <div class="hoverindicator"></div>
+                <ion-icon name="cog"></ion-icon>
+            </a>
+        </div>
+    </div>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        function select(el) {
+            document.querySelector(".active").classList.remove("active");
+            el.classList.add("active");
+            document.body.style.setProperty('--activeclr', el.dataset.clr);
+        }
+    </script>     
+  </body>
+</html>
