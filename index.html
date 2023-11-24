@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portifolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="center" id="back">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <script>
+        const progressBar = document.getElementById('progressBar');
+        const back =  document.getElementById('back');
+        progressBar.addEventListener('animationend', () => {
+          progressBar.classList.add('fade-out')
+          back.classList.add('fade-out')
+        });
+    </script>
+    <div class="wrapper"> 
+        <div class="navbar">
+            <a href="#" class="navitem active" id="menu" onclick="select(this)" data-clr="#89baff">
+                <div class="indicator"></div>
+                <div class="hoverindicator"></div>
+                <ion-icon name="home"></ion-icon>
+            </a>
+            <a href="#" class="navitem" id="projetos" onclick="select(this)" data-clr="#b56aeb">
+                <div class="indicator"></div>
+                <div class="hoverindicator"></div>
+                <ion-icon name="person"></ion-icon>
+            </a>
+            <a href="#" class="navitem" id="github" onclick="select(this)" data-clr="#fe9700">
+                <div class="indicator"></div>
+                <div class="hoverindicator"></div>
+                <ion-icon name="cog"></ion-icon>
+            </a>
+        </div>
+    </div>
+    <main class="Chars">
+        <div class='Char iframes'>
+            <div class="mario">
+                <a href="https://paozin666.github.io/projeto-mario/">
+				    <img src="https://ww1.logoeps.net/wp-content/uploads/2016/12/super-mario-logo.png?strip=all&lossy=1&resize=605%2C605">
+			    </a>
+                <iframe height="600" width="380" src="https://paozin666.github.io/projeto-mario/" frameborder="0"></iframe>
+            </div>
+            <div class="beserk">
+                <a href="https://paozin666.github.io/berserk-v2/">
+				    <img src="https://i.pinimg.com/originals/d2/00/10/d20010df643f146ad3c03c4a500ea57e.jpg">
+			    </a>
+                <iframe height="600" width="380" src="https://paozin666.github.io/berserk-v2/" frameborder="0"></iframe>
+            </div>
+        </div>
+        <div class='Char Git'>
+            <h1>GitHub Analytics</h1>
+            <div style="display: flex;flex-direction: column;align-items: center;">
+                <img height="202rem" 
+                src="https://github-readme-stats.vercel.app/api?username=PaoZin666&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true" />
+                <img height="226em"
+                src="https://github-readme-stats.vercel.app/api/top-langs/?username=PaoZin666&layout=compact&langs_count=6&theme=tokyonight" />
+            </div>
+            <div class="logo">
+                <img alt="HTML"
+                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+                <img alt="CSS"
+                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+                <img alt="Js"
+                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+            </div>
+            <div class="buttons">
+                <a href="mailto:ronald.conceicao15@aluno.enova.educacao.ba.gov.br"><img
+                    src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white"
+                    target="_blank"></a>
+                <a href="https://www.linkedin.com/in/RonaldGabriel" target="_blank"><img
+                    src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"
+                    target="_blank"></a>
+                <a href="https://PaoZin666.github.io/projeto-mario/" target="_blank"><img
+                    src="https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white"
+                    target="_blank"></a>
+                <a href="https://PaoZin666.github.io/Berserk/" target="_blank"><img
+                    src="https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white"
+                    target="_blank"></a>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        function select(el) {
+            document.querySelector(".active").classList.remove("active");
+            el.classList.add("active");
+            document.body.style.setProperty('--activeclr', el.dataset.clr);
+        }
+    </script>
+    <script src="./index.js"></script>     
+  </body>
+</html>
