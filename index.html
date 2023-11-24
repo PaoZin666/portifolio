@@ -10,19 +10,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="center" id="back">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <script>
+        const progressBar = document.getElementById('progressBar');
+        const back =  document.getElementById('back');
+        progressBar.addEventListener('animationend', () => {
+          progressBar.classList.add('fade-out')
+          back.classList.add('fade-out')
+        });
+    </script>
     <div class="wrapper"> 
         <div class="navbar">
-            <a href="#" class="navitem active" onclick="select(this)" data-clr="#89baff">
+            <a href="#" class="navitem active" id="menu" onclick="select(this)" data-clr="#89baff">
                 <div class="indicator"></div>
                 <div class="hoverindicator"></div>
                 <ion-icon name="home"></ion-icon>
             </a>
-            <a href="#" class="navitem" onclick="select(this)" data-clr="#b56aeb">
+            <a href="#" class="navitem" id="projetos" onclick="select(this)" data-clr="#b56aeb">
                 <div class="indicator"></div>
                 <div class="hoverindicator"></div>
                 <ion-icon name="person"></ion-icon>
             </a>
-            <a href="#" class="navitem" onclick="select(this)" data-clr="#fe9700">
+            <a href="#" class="navitem" id="github" onclick="select(this)" data-clr="#fe9700">
                 <div class="indicator"></div>
                 <div class="hoverindicator"></div>
                 <ion-icon name="cog"></ion-icon>
@@ -30,18 +41,18 @@
         </div>
     </div>
     <main class="Chars">
-        <div class='Char ativo iframes'>
+        <div class='Char iframes'>
             <div class="mario">
                 <a href="https://paozin666.github.io/projeto-mario/">
 				    <img src="https://ww1.logoeps.net/wp-content/uploads/2016/12/super-mario-logo.png?strip=all&lossy=1&resize=605%2C605">
 			    </a>
-                <iframe height="700" width="480" src="https://paozin666.github.io/projeto-mario/" frameborder="0"></iframe>
+                <iframe height="600" width="380" src="https://paozin666.github.io/projeto-mario/" frameborder="0"></iframe>
             </div>
             <div class="beserk">
                 <a href="https://paozin666.github.io/berserk-v2/">
 				    <img src="https://i.pinimg.com/originals/d2/00/10/d20010df643f146ad3c03c4a500ea57e.jpg">
 			    </a>
-                <iframe height="700" width="480" src="https://paozin666.github.io/berserk-v2/" frameborder="0"></iframe>
+                <iframe height="600" width="380" src="https://paozin666.github.io/berserk-v2/" frameborder="0"></iframe>
             </div>
         </div>
         <div class='Char Git'>
