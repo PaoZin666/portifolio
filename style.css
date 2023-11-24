@@ -48,4 +48,149 @@
 }
 .fade-out .center::before {
     z-index: -1;
- 
+    opacity: 0;
+}
+
+
+body {
+	--activeclr: #89baff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(180deg, var(--activeclr) 15%, rgba(0,0,0,1) 100%);
+    transition: --activeclr 300ms ease;
+}
+
+@property --activeclr {
+  syntax: "<color>";
+  initial-value: #89baff;
+  inherits: true;
+}
+
+.wrapper {
+	position: absolute;
+    top: 6px;
+	border-radius: 1rem;
+    overflow: hidden;
+    height: 6rem;
+    width: 30rem;
+    background: var(--activeclr);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.navbar {
+	display: flex;
+    justify-content: space-between;
+    height: 3.5rem;
+    background: white;
+    padding: 12px 0.75rem;
+    transition: padding 300ms ease;
+}
+
+.navbar:has(.navsearch.active) {
+	padding: 0 0.75rem;
+}
+
+.navitem, .navsearch {
+	position: relative;
+	display: grid;
+	place-content: center;
+	color: #fff;
+	width: 4.5rem;
+	text-align: center;
+	color: black;
+	font-size: 1.5rem;
+	transition: width 300ms ease, flex-grow 300ms ease;
+}
+
+.navbar:has(.navsearch.active) .navitem {
+	width: 3rem;
+}
+
+.hoverindicator {
+	position: absolute;
+	width: 3.5rem;
+	inset: 50% auto auto 50%;
+	transform: translate(-50%, -50%);
+	background: var(--activeclr);
+	opacity: 0;
+	border-radius: 1.5rem;
+	height: 2.25rem;
+	inset: auto auto -0.5rem 50%;
+	transition: inset 300ms ease, opacity 300ms ease;
+}
+@media (hover: hover) {
+	.navitem:not(.active):hover .hoverindicator,
+	.navsearch:not(.active):hover .searchbox {
+		border-radius: 1.25rem;
+		height: 2.5rem;
+		opacity: 1;
+		transition: opacity 150ms ease;
+	}
+}
+.active .hoverindicator {
+	opacity: 1;
+	border-radius: 0.5rem;
+	height: 0.25rem;
+	inset: auto auto 0.25rem 50%;
+	transition: inset 300ms ease, height 300ms ease, border-radius 300ms ease;
+}
+
+
+main {
+	display: flex;
+}
+.Char{
+    display: none;
+    visibility: hidden;
+}
+.Char.ativo{
+    display: flex;
+    visibility: visible;
+}
+
+.iframes {
+    flex-direction: column;
+}
+.iframes iframe{
+    overflow: hidden;
+    background-color: black;
+    border-radius: 50px;
+    border-width: 0;
+}
+.iframes img{
+    height: 70px;
+    width: 70px;
+    border-radius: 40px;
+}
+.mario, .beserk{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    top: 24rem;
+    padding: 10px 0px 0px;
+}
+
+.Git h1{
+    font-size: 60px;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-weight: 400;
+}
+.Git .logo{
+	display: flex;
+    height: 55px;
+    padding: 4px 70px 0px;
+    justify-content: space-evenly;
+}
+.Git .buttons{
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    padding: 10px 2px;
+    align-items: center;
+}
