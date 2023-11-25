@@ -6,11 +6,11 @@
     justify-content: center;
     background: rgb(0, 0, 0);
     opacity: 1;
-    transition: opacity 1s ease-in-out;
-    z-index: 1;
+    transition: opacity 3s ease-in-out;
+    z-index: 2;
 }
 .center::before{
-    animation: progress 4s forwards;
+    animation: progress 2s forwards;
 }
 .progress-bar {
     width: 400px;
@@ -19,8 +19,8 @@
     outline: 0.6mm solid rgb(255, 255, 255);
     position: relative;    
     opacity: 1;
-    transition: opacity 1s ease-in-out;
-    z-index: 1;
+    transition: opacity 3.5s ease-in-out;
+    z-index: 2;
 }
 .progress-bar::before {
     position: absolute;
@@ -39,15 +39,9 @@
     }
 }
 .fade-out {
-    z-index: -1;
     opacity: 0;
 }
-.fade-out .progress-bar::before {
-    z-index: -1;
-    opacity: 0;
-}
-.fade-out .center::before {
-    z-index: -1;
+.fade-out .progress-bar::before, .center::before {
     opacity: 0;
 }
 
@@ -72,6 +66,7 @@ body {
 }
 
 .wrapper {
+    z-index: 1;
 	position: absolute;
     top: 6px;
 	border-radius: 1rem;
@@ -91,11 +86,7 @@ body {
     transition: padding 300ms ease;
 }
 
-.navbar:has(.navsearch.active) {
-	padding: 0 0.75rem;
-}
-
-.navitem, .navsearch {
+.navitem {
 	position: relative;
 	display: grid;
 	place-content: center;
@@ -107,9 +98,7 @@ body {
 	transition: width 300ms ease, flex-grow 300ms ease;
 }
 
-.navbar:has(.navsearch.active) .navitem {
-	width: 3rem;
-}
+
 
 .hoverindicator {
 	position: absolute;
@@ -143,6 +132,8 @@ body {
 
 main {
 	display: flex;
+    z-index: 1;
+    position: absolute;
 }
 .Char{
     display: none;
@@ -153,8 +144,20 @@ main {
     visibility: visible;
 }
 
+.Maim h1{
+    font-size: 60px;
+    font-family: 'Kanit', sans-serif;
+    background: linear-gradient(10deg, rgb(0 0 0 / 20%), rgb(255 255 255 / 20%));
+    border-radius: 60px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: help;
+    border: none;
+    text-transform: uppercase;
+}
+
 .iframes {
-    flex-direction: column;
+    flex-direction: row;
 }
 .iframes iframe{
     overflow: hidden;
@@ -172,20 +175,26 @@ main {
     flex-direction: column;
     position: relative;
     align-items: center;
-    top: 24rem;
-    padding: 10px 0px 0px;
+    padding: 10px 10px 0px;
 }
 
+.Git{
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
 .Git h1{
+    height: 30px;
     font-size: 60px;
     font-family: 'Pixelify Sans', sans-serif;
     font-weight: 400;
 }
 .Git .logo{
-	display: flex;
-    height: 55px;
+    display: flex;
+    height: 65px;
+    width: 70px;
     padding: 4px 70px 0px;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 .Git .buttons{
     display: flex;
