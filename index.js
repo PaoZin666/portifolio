@@ -5,6 +5,15 @@ const mainSection = document.querySelector('.Maim');
 const gitSection = document.querySelector('.Git');
 const iframeSection = document.querySelector('.iframes');
 
+window.addEventListener('load', function() {
+    var iframe = document.getElementById('berserkVideo');
+    var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    var video = iframeDocument.querySelector('video');
+    if (video) {
+        video.volume = 0;
+    }
+});
+
 function select(element) {
     const links = document.querySelectorAll('.navitem');
     links.forEach(link => {
@@ -42,6 +51,3 @@ function select(element) {
         iframeSection.classList.add('ativo');
     }
 }
-setTimeout(function() {
-    document.querySelector('.Char').classList.add('ativo');
-}, 1000);
