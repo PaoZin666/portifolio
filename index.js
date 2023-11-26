@@ -1,6 +1,9 @@
 const menu = document.getElementById('menu');
 const pj = document.getElementById('projetos');
 const gh = document.getElementById('github');
+const mainSection = document.querySelector('.Maim');
+const gitSection = document.querySelector('.Git');
+const iframeSection = document.querySelector('.iframes');
 
 function select(element) {
     const links = document.querySelectorAll('.navitem');
@@ -12,9 +15,6 @@ function select(element) {
     document.body.style.setProperty('--activeclr', element.dataset.clr);
 
     const id = element.id;
-    const mainSection = document.querySelector('.Maim');
-    const gitSection = document.querySelector('.Git');
-    const iframeSection = document.querySelector('.iframes');
 
     if (id === 'menu') {
         menu.classList.add('active');
@@ -42,3 +42,6 @@ function select(element) {
         iframeSection.classList.add('ativo');
     }
 }
+setTimeout(function() {
+    document.querySelector('.Char').classList.add('ativo');
+}, 1000);

@@ -6,7 +6,7 @@
     justify-content: center;
     background: rgb(0, 0, 0);
     opacity: 1;
-    transition: opacity 3s ease-in-out;
+    transition: opacity 1.5s ease-in-out;
     z-index: 2;
 }
 .center::before{
@@ -19,7 +19,7 @@
     outline: 0.6mm solid rgb(255, 255, 255);
     position: relative;    
     opacity: 1;
-    transition: opacity 3.5s ease-in-out;
+    transition: opacity 3s ease-in-out;
     z-index: 2;
 }
 .progress-bar::before {
@@ -31,11 +31,11 @@
     width: 0;
     height: 20px;
     background: rgb(255, 255, 255);
-    animation: progress 3.5s forwards;
+    animation: progress 2s forwards;
 }
 @keyframes progress {
     to {
-      width: calc(100% - 2px);
+      width: calc(100% - 4px);
     }
 }
 .fade-out {
@@ -56,7 +56,7 @@ body {
     height: 100vh;
     width: 100vw;
     background: linear-gradient(180deg, var(--activeclr) 15%, rgba(0,0,0,1) 100%);
-    transition: --activeclr 300ms ease;
+    transition: --activeclr 900ms ease;
 }
 
 @property --activeclr {
@@ -83,7 +83,7 @@ body {
     height: 3.5rem;
     background: white;
     padding: 12px 0.75rem;
-    transition: padding 300ms ease;
+    transition: padding 1000ms ease;
 }
 
 .navitem {
@@ -95,7 +95,7 @@ body {
 	text-align: center;
 	color: black;
 	font-size: 1.5rem;
-	transition: width 300ms ease, flex-grow 300ms ease;
+	transition: width 1000ms ease, flex-grow 1000ms ease;
 }
 
 
@@ -110,7 +110,7 @@ body {
 	border-radius: 1.5rem;
 	height: 2.25rem;
 	inset: auto auto -0.5rem 50%;
-	transition: inset 300ms ease, opacity 300ms ease;
+	transition: inset 1000ms ease, opacity 1500ms ease;
 }
 @media (hover: hover) {
 	.navitem:not(.active):hover .hoverindicator,
@@ -135,13 +135,39 @@ main {
     z-index: 1;
     position: absolute;
 }
-.Char{
+
+.Maim,
+.Git,
+.iframes {
     display: none;
+    opacity: 0;
     visibility: hidden;
+    animation: fadeIn 900ms ease-in-out forwards;
 }
-.Char.ativo{
+@keyframes fadeIn {
+    from {
+      opacity: 0; /* Opacidade inicial */
+    }
+    to {
+      opacity: 1; /* Opacidade final */
+    }
+  }
+
+.Maim.ativo,
+.Git.ativo,
+.iframes.ativo {
     display: flex;
+    opacity: 1;
     visibility: visible;
+}
+
+.iframes {
+    flex-direction: row;
+}
+.Git{
+    position: relative;
+    flex-direction: column;
+    align-items: center;
 }
 
 .Maim h1{
@@ -154,10 +180,6 @@ main {
     cursor: help;
     border: none;
     text-transform: uppercase;
-}
-
-.iframes {
-    flex-direction: row;
 }
 .iframes iframe{
     overflow: hidden;
@@ -176,12 +198,6 @@ main {
     position: relative;
     align-items: center;
     padding: 10px 10px 0px;
-}
-
-.Git{
-    position: relative;
-    flex-direction: column;
-    align-items: center;
 }
 .Git h1{
     height: 30px;
